@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+	<script src="https://kit.fontawesome.com/7c9c967b69.js" crossorigin="anonymous"></script>
+
+	
+    <link rel="icon" href="images/play.png" >
+    <title> Harish Music Podcast</title>
+    
+ 	</head>
+	<body>
+		<style type="text/css">body{
+    		background-color: #f7f7f7;
+    		font-family: Open sans;
+    	}
+    	img{
+    		width: 100%;
+    		min-height: 250px;
+    	}
+    	.main{
+    		padding: 40px 0;
+    	}
+    	.col-md-3{
+    		margin-bottom: 40px;
+    	}
+    	.album-poster{
+    		position: relative;
+    		display: block;
+    		border-radius: 7px;
+    		overflow: hidden;
+    		box-shadow: 0 15px 35px #3d2173a1;
+    		transition: all ease 0.4s;
+    	}
+    	.album-poster:hover{
+    		box-shadow: none;
+    		transform: scale(0.98) translateY(15px);
+    	}
+    	h3{
+    		font-size: 34px;
+    		margin-bottom: 34px;
+    		border-bottom: 4px solid #e6e6e6;
+    		padding-bottom: 15px;
+    	}
+    	p{
+    		font-size: 15px;
+    	}
+    	h4{
+    		font-size: 16px;
+    		text-transform: uppercase;
+    		margin-top: 15px;
+    		font-weight: 700;
+    	}
+		
+
+		/*default is hide music player*/
+		#aplayer{
+			position: fixed;
+			bottom: -100%;
+			left: 0;
+			width: 100%;
+			margin: 0;
+			box-shadow: 0 -2px 2px #dadada;
+			background-color: #fff;
+			transition: all ease 0.5s;
+		}
+		#aplayer.showPlayer{
+			bottom: 0;
+		}
+
+		
+		/*MUSIC PLAYER CUSTOMIZING STYLE*/
+		span{
+			color: #000 !important;
+			font-size: 16px;
+		}
+		.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded{
+			background: #e0e0e0;
+    		height: 4px;
+		}
+		.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played{
+			height: 4px;
+			background-color: #2196F3 !important;
+		}
+		.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb{
+			background-color: #2196F3 !important;
+		}
+
+		.aplayer .aplayer-icon{
+			width: 20px;
+			height: 20px;
+		}
+		.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+		    fill: #000;
+		}
+		.aplayer .aplayer-info .aplayer-music{
+			margin-bottom: 5px;
+		}
+
+
+</style>
+		
+
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3><i class="fas fa-music"> </i>  Harish Music Podcast</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="javascript:void();" class="album-poster" data-switch="0">
+					<img src=https://tse2.mm.bing.net/th?id=OIP.2DpjjbfXQO3lWHmf-ttzrQHaHa&pid=Api&P=0&w=300&h=300 alt="">
+				</a>
+				<h4>Mayakkam Enna</h4>
+				<p>Pirai Thedum </p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="images/main tera.jpg"  alt=>
+				</a>
+				<h4> Raabta</h4>
+				<p>Main Tera Boyfriend </p>
+			</div>
+
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="images/rauf.jpg" alt=>
+				</a>
+				<h4>Rauf and Faik </h4>
+				<p></p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src=https://tse1.mm.bing.net/th?id=OIP.BFzCsZtXLULhsZfX7U-MGwHaE8&pid=Api&P=0&w=241&h=161 alt=>
+				</a>
+				<h4>Dharala prabhu </h4>
+				<p>Dharala Prabhu Title Track</p>
+			</div>
+			
+
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="4">
+					<img src=https://tse3.mm.bing.net/th?id=OIP.J5yvhXWpchzgWx1KJCmOsgHaEU&pid=Api&P=0&w=324&h=190 alt="">
+				</a>
+				<h4>Maara</h4>
+				<p>Yaar Azhaipathu </p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="5">
+					<img src="https://i.ytimg.com/vi/KIxc1HiR1_k/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Velaiyilla Pattathari </h4>
+				<p>Amma Amma </p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="6">
+					<img src="https://tse4.mm.bing.net/th?id=OIP.6JjVoNFicBpcKyBFUt0hIAHaFE&pid=Api&P=0&w=238&h=164" alt="">
+				</a>
+				<h4>Ae Dil Hai Mushkil Title </h4>
+				<p>Ae Dil Hai Mushkil </p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="7">
+					<img src="https://tse3.mm.bing.net/th?id=OIP.YxNFi6oN9VfzEUXLCQk_ugHaE8&pid=Api&P=0&w=231&h=155" alt="">
+				</a>
+				<h4>3</h4>
+				<p>A Life Full Of Love </p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="8">
+					<img src="https://tse4.mm.bing.net/th?id=OIP.puLNs-oaq_-XyU0ZXCEPgQHaEK&pid=Api&P=0&w=335&h=189" alt="">
+				</a>
+				<h4>Chekka Chivantha Vaanam</h4>
+				<p>Hayati </p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="9">
+					<img src="images/ennadi.jpg" alt="">
+				</a>
+				<h4>Vada Chennai</h4>
+				<p>Ennadi Maayavi</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="10">
+					<img src="images/nanjamma.jpg" alt="">
+				</a>
+				<h4>Nanjamma</h4>
+				<p>Nanjamma</p>
+			</div>
+
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="11">
+					<img src="images/idhu.jpg" alt="">
+				</a>
+				<h4>Goa</h4>
+				<p>Idhu Varai</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="12">
+					<img src="images/genda.jpg" alt="">
+				</a>
+				<h4>Delhi-6</h4>
+				<p>Genda Phool</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="13">
+					<img src="images/miyagi.jpg" alt="">
+				</a>
+				<h4>Miyagi remix</h4>
+				<p></p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="14">
+					<img src=https://tse3.mm.bing.net/th?id=OIP.Sx-MkFahWF4MIqQoZ8uZrQHaEK&pid=Api&P=0&w=268&h=151 alt="">
+				</a>
+				<h4>Doctor</h4>
+				<p>Chellamma </p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="15">
+					<img src="images/mannippaaya.jpg" alt="">
+				</a>
+				<h4>Vinnaithaandi Varuvaayaa</h4>
+				<p>Mannipaaya</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="16">
+					<img src="images/nadiyon.jpg" alt="">
+				</a>
+				<h4>Roohi</h4>
+				<p>Nadiyon Paar</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="17">
+					<img src="images/rowdy.jpg" alt="">
+				</a>
+				<h4>Maari-2</h4>
+				<p>Rowdy Baby</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="18">
+					<img src="images/mazhi.jpg" alt="">
+				</a>
+				<h4>Chekka Chivantha Vaanam</h4>
+				<p>Mazhi Kuruvi </p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="19">
+					<img src="images/saki.jpg" alt="">
+				</a>
+				<h4>Batla House</h4>
+				<p>O Saki Saki</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="20">
+					<img src="images/vaa sulthan.jpg" alt="">
+				</a>
+				<h4>Sulthan</h4>
+				<p>Jai Sulthan</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="21">
+					<img src="images/Aaruyire.jpg" alt="">
+				</a>
+				<h4>Guru</h4>
+				<p>Aaruyire</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="22">
+					<img src="images/hoja.jpg" alt="">
+				</a>
+				<h4>Malang</h4>
+				<p>Ho Ja Mast Malang Tu</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="23">
+					<img src="images/Pyaar.jpg" alt="">
+				</a>
+				<h4>Pyaar Prema Kaadhal</h4>
+				<p>High on Love</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="24">
+					<img src="images/roja.jpg" alt="">
+				</a>
+				<h4>Kaadhal Rojave</h4>
+				<p>Kaadhal Rojave song</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="25">
+					<img src="images/Kanavae.jpg" alt="">
+				</a>
+				<h4>David</h4>
+				<p>Kanavae Kanavae</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="26">
+					<img src="images/butta.jpg" alt="">
+				</a>
+				<h4>Ala Vaikunthapurramuloo</h4>
+				<p>Butta Bomma</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="27">
+					<img src="images/bujji.jpg" alt="">
+				</a>
+				<h4>Jagame Thandhiram </h4>
+				<p>Bujji</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="28">
+					<img src="images/deema.jpg" alt="">
+				</a>
+				<h4>Pati Patni Aur Woh</h4>
+				<p>Dheeme Dheeme</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="29">
+					<img src="images/yaanji.jpg" alt="">
+				</a>
+				<h4>Vikram Vedha</h4>
+				<p>Yaanji Yaanji</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="30">
+					<img src="images/ram.jpg" alt="">
+				</a>
+				<h4>96</h4>
+				<p>Life Of Ram</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="31">
+					<img src="images/kala.jpg" alt="">
+				</a>
+				<h4>Baar baar dekho</h4>
+				<p>Kaala Chashma</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="32">
+					<img src="images/inayae.jpg" alt="">
+				</a>
+				<h4>Thadam</h4>
+				<p>Inayae En Uyir</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="33">
+					<img src="images/macho.jpg" alt="">
+				</a>
+				<h4>Mersal</h4>
+				<p>Macho</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="34">
+					<img src="images/swag.jpg" alt="">
+				</a>
+				<h4>Tiger Zinda Hai</h4>
+				<p>Swag Se Swagat </p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="35">
+					<img src="images/mersal.jpg" alt="">
+				</a>
+				<h4>I</h4>
+				<p>Mersalayitten</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="36">
+					<img src="images/phir bhi.jpg" alt="">
+				</a>
+				<h4>Half Girlfriend</h4>
+				<p>Phir Bhi Tumko Chahunga</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="37">
+					<img src="images/moongil.jpg" alt="">
+				</a>
+				<h4>Kadal</h4>
+				<p>Moongil Thottam</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="38">
+					<img src="images/malang.jpg" alt="">
+				</a>
+				<h4>Malang</h4>
+				<p>Malang Title Track</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="39">
+					<img src="images/diggy.jpg" alt="">
+				</a>
+				<h4>Sonu Ke Titu Ki Sweety</h4>
+				<p>Bom Diggy Diggy</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="40">
+					<img src="images/simba.jpg" alt="">
+				</a>
+				<h4> Simmba</h4>
+				<p>Aankh Marey</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="41">
+					<img src="images/ilang.jpg" alt="">
+				</a>
+				<h4>Pithamagan</h4>
+				<p>Elang Kathu Visuthae</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="42">
+					<img src="images/humraah.jpg" alt="">
+				</a>
+				<h4>Malang</h4>
+				<p>Humraah Malang</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="43">
+					<img src="images/paiya.jpg" alt="">
+				</a>
+				<h4>Paiyaa</h4>
+				<p>Thuli Thuli Mazhai</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="44">
+					<img src="images/en thanima.jpg" alt="">
+				</a>
+				<h4>Teddy</h4>
+				<p>En Iniya Thanimaye</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="45">
+					<img src="images/number.jpg" alt="">
+				</a>
+				<h4>Sanam Teri Kasam</h4>
+				<p>Ek Number</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="46">
+					<img src="images/mayavi.jpg" alt="">
+				</a>
+				<h4>Kadavul Thandha</h4>
+				<p>Maayavi</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="47">
+					<img src="images/nan.jpg" alt="">
+				</a>
+				<h4>Iragai Poley</h4>
+				<p>Naan Mahaan Alla</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="48">
+					<img src="images/phota.jpg" alt="">
+				</a>
+				<h4>Kheech Meri Photo</h4>
+				<p>Sanam Teri Kasam</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="49">
+					<img src="images/solla.jpg" alt="">
+				</a>
+				<h4>En Kadhal Solla</h4>
+				<p>Paiyaa</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="50">
+					<img src="images/thamizhan.jpg" alt="">
+				</a>
+				<h4>Aalporaan Thamizhan</h4>
+				<p>Mersal</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster"data-switch="51">
+					<img src="images/enna solla.jpg" alt="">
+				</a>
+				<h4>Enna Solla Pogirai</h4>
+				<p>Kandukondain Kandukondain</p>
+			</div>
+
+</div>
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<h3>coming soon</h3>
+			</div>
+			<div class="col-md-2">
+				<a href="#" class="album-poster">
+					<img src="https://images.pexels.com/photos/1699161/pexels-photo-1699161.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+				</a>
+				<h4>Lorem ipsum</h4>
+			</div>
+			<div class="col-md-2">
+				<a href="#" class="album-poster">
+					<img src="https://images.pexels.com/photos/838702/pexels-photo-838702.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+				</a>
+				<h4>Repellat illo</h4>
+			</div>
+			<div class="col-md-2">
+				<a href="#" class="album-poster">
+					<img src="https://images.pexels.com/photos/894156/pexels-photo-894156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+				</a>
+				<h4>adipisicing elit</h4>
+			</div>
+			
+			<div class="col-md-2">
+				<a href="#" class="album-poster">
+					<img src="https://images.pexels.com/photos/2118046/pexels-photo-2118046.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+				</a>
+				<h4>Atque ab</h4>
+			</div>
+			<div class="col-md-2">
+				<a href="#" class="album-poster">
+					<img src="https://images.pexels.com/photos/1735240/pexels-photo-1735240.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+				</a>
+				<h4>Fugiat Silly</h4>
+			</div>
+			<div class="col-md-2">
+				<a href="#" class="album-poster">
+					<img src="https://images.pexels.com/photos/2272854/pexels-photo-2272854.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+				</a>
+				<h4>veniam expedita</h4>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+	<div id="aplayer"></div>
+
+	<!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+
+	<script>
+
+
+		// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+		    {
+		        name: 'Pirai Thedum',
+		        artist: 'Saindhavi and G.V.Prakesh',
+		        url: 'source/pirai.mp3',
+		        cover: 'https://tse2.mm.bing.net/th?id=OIP.2DpjjbfXQO3lWHmf-ttzrQHaHa&pid=Api&P=0&w=300&h=300',
+		    },
+		    {
+				name: 'Main Tera Boyfriend',
+				artist: ' Neha Kakkar-Arijit Singh',
+				url: 'source/main tera.mp3',
+				cover: 'images/main tera.jpg',
+			},
+			{
+				name: 'Rauf and Faik',
+				artist: '',
+				url: 'source/Rauf & Faik.mp3',
+				cover: 'images/rauf.jpg',
+			},
+
+		    {
+		        name: 'Dharala Prabhu Title Track',  // SONG NAME
+		        artist: 'Anirudh Ravichander', //ARTIST NAME
+		        url: 'source/dharala.mp3', // PATH NAME AND SONG URL
+		       cover: 'https://tse1.mm.bing.net/th?id=OIP.BFzCsZtXLULhsZfX7U-MGwHaE8&pid=Api&P=0&w=241&h=161',//coverage image
+		    },
+			
+			{
+				name: 'Yaar Azhaippadhu ',
+				artist: 'Sid Sriram',
+				url: 'source/yaar.mp3',
+				cover: 'https://tse3.mm.bing.net/th?id=OIP.J5yvhXWpchzgWx1KJCmOsgHaEU&pid=Api&P=0&w=324&h=190',
+			},
+			{
+				name: 'Amma Amma',
+				artist: 'Dhanush and S.Janaki',
+				url: 'source/amma.mp3',
+				cover: 'https://i.ytimg.com/vi/KIxc1HiR1_k/maxresdefault.jpg',
+			},
+			{
+				name: 'Ae Dil Hai Mushkil',
+				artist: 'Arjith Singh',
+				url: 'source/ae dhil.mp3',
+				cover: 'https://tse4.mm.bing.net/th?id=OIP.6JjVoNFicBpcKyBFUt0hIAHaFE&pid=Api&P=0&w=238&h=164',
+			},
+			{
+				name: 'A Life Full Of Love',
+				artist: 'Dhanush',
+				url: 'source/A Life Full Of Love.mp3',
+				cover: 'https://tse3.mm.bing.net/th?id=OIP.YxNFi6oN9VfzEUXLCQk_ugHaE8&pid=Api&P=0&w=231&h=155',
+			},
+			{
+				name: 'Hayati',
+				artist: 'Ar Rahman',
+				url: 'source/hayati.mp3',
+				cover: 'https://tse4.mm.bing.net/th?id=OIP.puLNs-oaq_-XyU0ZXCEPgQHaEK&pid=Api&P=0&w=335&h=189',
+			},
+			{
+				name: 'Ennadi Maayavi',
+				artist: 'Sid Sriram',
+				url: 'source/Ennadi Maayavi.mp3',
+				cover: 'images/ennadi.jpg',
+			},
+			{
+				name: 'Nanjamma',
+				artist: 'nanjamma',
+				url: 'source/Nanjamma.mp3',
+				cover: 'images/nanjamma.jpg',
+			},
+			{
+				name: 'Idhu Varai',
+				artist: 'Ajesh-Andrea',
+				url: 'source/Idhu Varai.mp3',
+				cover: 'images/idhu.jpg',
+			},
+			
+			{
+				name: 'Genda Phool',
+				artist: 'Badshah',
+				url: 'source/Genda.mp3',
+				cover: 'images/genda.jpg',
+			},
+			
+			{
+				name: 'Miyagi remix',
+				artist: 'Miyagi remix',
+				url: 'source/Miyagi Remix.mp3',
+				cover: 'images/miyagi.jpg',
+			},
+			
+			{
+				name: 'Chellamma',
+				artist: 'Anirudh Ravichander',
+				url: 'source/chellama.mp3',
+				cover: 'https://tse3.mm.bing.net/th?id=OIP.Sx-MkFahWF4MIqQoZ8uZrQHaEK&pid=Api&P=0&w=268&h=151',
+			},
+			{
+				name: 'Mannipaaya',
+				artist: 'AR Rahman - Shreya Ghoshal',
+				url: 'source/Mannipaaya.mp3',
+				cover: 'images/mannippaaya.jpg',
+			},
+			{
+				name: 'Nadiyon Paar',
+				artist: 'Rashmeet Kaur',
+				url: 'source/Nadiyon Paar.mp3',
+				cover: 'images/nadiyon.jpg',
+			},
+			{
+				name: 'Rowdy Baby',
+				artist: 'Dhanush - Dhee ',
+				url: 'source/Rowdy Baby.mp3',
+				cover: 'images/rowdy.jpg',
+			},
+			{
+				name: 'Mazhi Kuruvi',
+				artist: 'AR.Rahman',
+				url: 'source/Mazhai Kuruvi.mp3',
+				cover: 'images/mazhi.jpg',
+			},
+			{
+				name: 'O Saki Saki',
+				artist: 'Neha Kakkar',
+				url: 'source/O Saki.mp3',
+				cover: 'images/saki.jpg',
+			},
+			{
+				name: 'Jai Sulthan',
+				artist: 'Anirudh Ravichander',
+				url: 'source/Jai Sulthan.mp3',
+				cover: 'images/vaa sulthan.jpg',
+			},
+			{
+				name: 'Aaruyire',
+				artist: 'A.R.Rahman',
+				url: 'source/Aaruyire.mp3',
+				cover: 'images/Aaruyire.jpg',
+			},
+			{
+				name: 'Ho Ja Mast Malang Tu',
+				artist: 'Adnan Dhool',
+				url: 'source/Ho Ja Mast Malang Tu.mp3',
+				cover: 'images/hoja.jpg',
+			},
+			
+			{
+				name: 'High On Love',
+				artist: 'Yuvan Shankar Raja',
+				url: 'source/High On Love.mp3',
+				cover: 'images/pyaar.jpg',
+			},
+			{
+				name: 'Kaadhal Rojave',
+				artist: 'A.R.Rahman',
+				url: 'source/Kadhal Rojave.mp3',
+				cover: 'images/roja.jpg',
+			},
+			{
+				name: 'kanave kanave ',
+				artist: 'Anirudh Ravichander',
+				url: 'source/Kanave Kanave.mp3',
+				cover: 'images/Kanavae.jpg',
+			},
+			{
+				name: 'Butta Bomma',
+				artist: 'Armaan Malik',
+				url: 'source/Butta.mp3',
+				cover: 'images/butta.jpg',
+			},
+			{
+				name:'Bujji',
+				artist:'Santhosh Narayanan',
+				url: 'source/bujji.mp3',
+				cover: 'images/Bujji.jpg',
+			},
+			{
+				name: 'Dheeme Dheeme',
+				artist: 'tony kakkar ',
+				url: 'source/Dheeme Dheeme.mp3',
+				cover: 'images/deema.jpg',
+			},
+			{
+				name: 'Yaanji Yaanji',
+				artist: 'Anirudh Ravichander',
+				url: 'source/Yaanji.mp3',
+				cover: 'images/yaanji.jpg',
+			},
+			{
+				name: 'Life of Ram',
+				artist: 'Pradeep Kumar',
+				url: 'source/Life Of Ram.mp3',
+				cover: 'images/ram.jpg',
+			},
+			{
+				name: 'Kaala-Chashma',
+				artist: 'Amar Arshi',
+				url: 'source/Kala-Chashma.mp3',
+				cover: 'images/kala.jpg',
+			},
+			{
+				name: 'Inayae En Uyir',
+				artist: 'Sid Sriram',
+				url: 'source/Inayae En Uyir.mp3',
+				cover: 'images/inayae.jpg',
+			},
+			{
+				name: 'Macho',
+				artist: 'A.R.Rahman - Swetha Mohan',
+				url: 'source/Macho.mp3',
+				cover: 'images/macho.jpg',
+			},
+			{
+				name: 'Swag Se Swagat',
+				artist: 'Neha Bhasin',
+				url: 'source/Swag Se Swagat.mp3',
+				cover: 'images/swag.jpg',
+			},
+			{
+				name: 'Mersalaayitten',
+				artist: 'Anirudh Ravichander',
+				url: 'source/Mersalayitten.mp3',
+				cover: 'images/mersal.jpg',
+			},
+			{
+				name: 'Phir Bhi Tumko Chahunga',
+				artist: 'Arijith Singh',
+				url: 'source/Phir Bhi Tumko Chahunga.mp3',
+				cover: 'images/phir bhi.jpg',
+			},
+			{
+				name: 'Moongil Thottam',
+				artist: 'A.R.Rahman - Harini',
+				url: 'source/Moongil Thottam.mp3',
+				cover: 'images/moongil.jpg',
+			},
+			{
+				name: 'Malang Title Track',
+				artist: 'Ved Sharma',
+				url: 'source/Malang.mp3',
+				cover: 'images/Malang.jpg',
+			},
+			{
+				name: 'Bom Diggy Diggy',
+				artist: 'Zack Knight - Jasmin Walia',
+				url: 'source/Bom Diggy Diggy.mp3',
+				cover: 'images/diggy.jpg',
+			},
+			{
+				name: 'Aankh Marey',
+				artist: 'Neha Kakkar',
+				url: 'source/Aankh marey.mp3',
+				cover: 'images/simba.jpg',
+			},
+			
+			{
+				name: 'Pithamagan ',
+				artist: ' Ilayaraja',
+				url: 'source/Elangathu.mp3',
+				cover: 'images/ilang.jpg',
+			},
+			{
+				name: 'Humrah Malang',
+				artist: 'Sachet Tandon',
+				url: 'source/Humraah.mp3',
+				cover: 'images/humraah.jpg',
+			},
+			{
+				name: 'Thuli Thuli Mazhai',
+				artist: 'Yuvan Shankar Raja',
+				url: 'source/Thuli.mp3',
+				cover: 'images/paiya.jpg',
+			},
+			{
+				name: 'En Iniya Thanimaye',
+				artist: 'Sid Sriram',
+				url: 'source/Iniya Thanimaye.mp3',
+				cover: 'images/en thanima.jpg',
+			},
+			{
+				name: 'Ek Number',
+				artist: 'Neeti Mohan',
+				url: 'source/Ek Number.mp3',
+				cover: 'images/number.jpg',
+			},
+
+			{
+				name: 'Kadavul Thandha',
+				artist: 'SPB Charan',
+				url: 'source/Kadavul Thandha.mp3',
+				cover: 'images/mayavi.jpg',
+			},
+			{
+				name: 'Iragai Poley',
+				artist: 'Yuvan Shankar Raja',
+				url: 'source/Iragai Poley.mp3',
+				cover: 'images/nan.jpg',
+			},
+			{
+				name: 'Kheech Meri Photo',
+				artist: 'Neeti Mohan',
+				url: 'source/Kheech Meri Photo.mp3',
+				cover: 'images/phota.jpg',
+			},
+			{
+				name: 'En Kadhal Solla',
+				artist: 'Yuvan Shankar Raja',
+				url: 'source/En Kadhal Solla.mp3',
+				cover: 'images/solla.jpg',
+			},
+			{
+				name: 'Aalaporaan Thamizhan',
+				artist: 'Kailash Kher ',
+				url: 'source/Aalaporaan Thamizhan.mp3',
+				cover: 'images/thamizhan.jpg',
+			},
+			{
+				name: 'Enna Solla Pogirai',
+				artist:'Shankar Mahadevan ',
+				url: 'source/Enna Solla Pogirai.mp3',
+				cover: 'images/enna solla.jpg',
+			},
+			
+			
+			
+		 ]
+		});
+	</script>
+
+	</body>
+</html>
